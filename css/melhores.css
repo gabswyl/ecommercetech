@@ -1,0 +1,47 @@
+.melhores_marcas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 80px;
+}
+
+
+.melhores_marcas p {
+    font-weight: 700;
+    font-size: 32px;
+    text-transform: uppercase;
+    color: var(--text2);
+}
+
+.separador {
+    background-color: var(--cardbg);
+    border-radius: 15px;
+    width: 1265px;
+    height: 28px;
+    margin-left: 330px;
+    margin-top: 70px;
+   
+}
+
+
+.marcas li {
+    margin-top: 40px;
+    background-color: var(--cardbg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 15px;
+    width: 265px;
+    height: 100px;
+}
+
+.cards_marcas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 45px;
+    
+}
+

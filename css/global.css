@@ -1,0 +1,39 @@
+@import url(nav.css);
+@import url(header.css);
+@import url(navbar.css);
+@import url(slide.css);
+@import url(departamentos.css);
+@import url(vendidos.css); 
+@import url(ofertas.css);
+@import url(melhores.css);
+@import url(newsletter.css);
+@import url(footer.css);
+@import url(./plugins/simpleAnime.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    
+}
+
+
+
+body {
+    background-color: var(--bg);
+}
+
+:root {
+    --bg: #E8E8E8;
+    --text: #9A9A9A;
+    --red: #F52D38;
+    --nav: #CFCFCF;
+    --text2: #404040;
+    --yellow: #F5BD2D;
+    --green: #31F52D;
+    --blue: #2D95F5;
+    --preco: #0A4A00;
+    --compra: #01BE5A;
+    --cardbg: #D9D9D9;
+}

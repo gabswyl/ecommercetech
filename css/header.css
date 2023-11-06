@@ -1,0 +1,193 @@
+/* .headerdois {
+    background-color: red;
+} */
+
+.container_search {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 145px;
+    margin-right: 145px;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.pesquisa {
+    border: 2px solid #FDFDFD;
+    background-color: #FDFDFD;
+    border-radius: 15px;
+    width: 760px;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.menu_header {
+    width: 100%;
+    background-color: var(--bg);
+    display: none;
+    cursor: pointer;
+}
+
+
+
+.barra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    
+}
+
+
+.barra_card {
+    margin-left: 10px;
+    width: 35px;
+    height: 35px;
+    
+}
+
+.botao_login {
+    background-color: var(--red);
+    border: 2px solid var(--red);
+    border-radius: 15px;
+    padding: 10px;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+}
+
+
+.botao_login a {
+    color: var(--bg);
+ }
+ 
+.dropdown_nav, .close {
+     display: none;
+ }
+
+
+
+.nav_listjs {
+    gap: 10px;
+    list-style-type: none;
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 165px;
+    right: 0px;
+    background-color: var(--nav);
+    transition: .6s;
+    visibility: hidden;
+    height: 0px;
+    overflow-y: hidden;
+    z-index: 100;
+}
+
+
+
+.nav_j {
+   padding: 10px;
+   width: 100%;
+   border-bottom: 2px solid #cccccc
+}
+
+.nav_x {
+    padding: 10px;
+    width: 100%;
+    border-bottom: 2px solid rgb(145, 145, 145);
+   
+}
+
+.nav_login {
+   padding: 10px;
+   width: 100%;
+   border-bottom: 2px solid #cccccc;
+}
+
+.nav_listjs a {
+    text-decoration: none;
+    color: var(--text2);
+}
+
+.nav_listjs li:hover {
+    width: 100%;
+    background-color: #bbbbbb;
+}
+
+
+ 
+@media (max-width: 1400px) {
+    .pesquisa {
+        width: 760px;
+    }
+
+}
+
+@media (max-width: 1320px) {
+    .pesquisa {
+        width: 380px;
+    }
+
+}
+
+@media (max-width: 1000px) {
+
+    .container_search {
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .pesquisa {
+        
+        width: 220px;
+    }
+
+    .botao_login, .barra_card {
+        display: none;
+    }
+
+
+    .navjs.active .nav_listjs {
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 165px);
+        visibility: visible;
+        overflow-y: auto;
+        
+    }
+    .menu_header {
+        display: block;
+        background-color: none;
+        border: none;
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .botao_login, .barra_card {
+        display: none;
+    }
+
+    .menu_header {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .nav_listjs {
+        top: 250px;
+        
+    }
+
+}

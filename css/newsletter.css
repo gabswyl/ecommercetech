@@ -1,0 +1,42 @@
+.new {
+    background-color: var(--bg);
+}
+
+.novidades_new {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+}
+
+.novidades_new p {
+    margin-top: 90px;
+    color: var(--text2);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.form_new {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.new_input {
+    background-color: #FDFDFD;
+    width: 200px;
+    padding: 10px;
+    border: 2px solid #FDFDFD;
+    color: var(--text)
+
+}
+
+.cadastro_new {
+    background-color: var(--red);
+    border: 2px solid var(--red);
+    color: #fff;
+    padding: 10px;
+    align-items: center;
+    text-transform: uppercase;
+    
+}
+

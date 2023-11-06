@@ -1,0 +1,23 @@
+.nav {
+  background-color: var(--bg);
+  padding: 20px;
+}
+
+.container_header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.icones a {
+  text-decoration: none;
+  padding: 10px;
+}
+
+.header_ajudas a {
+  margin-right: 20px;
+  margin-top: 20px;
+  text-decoration: none;
+  color: var(--text);
+}

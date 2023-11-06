@@ -1,0 +1,106 @@
+footer p {
+    font-weight: 700;
+    color: var(--text2);
+    font-size: 24px;
+}
+
+.elementos_footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 90px;
+    gap: 150px;
+    margin-bottom: 200px;
+
+}
+
+.elementos_footer ul li {
+    color: var(--text)
+}
+
+.footer2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    list-style-type: none;
+    gap: 10px;
+    
+    
+}
+
+.footer_title img {
+    display: none;
+}
+
+.alinhamento_footer {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.faqFooter1 li {
+    gap: 20px;
+}
+
+.footer_responsivo {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.listFooter li {
+    margin-top: 5px;
+}
+
+@media (min-width: 1250px) { 
+    .footer_responsivo {
+        display: none;
+    }
+
+}
+
+@media (max-width: 1250px) {
+
+    .footer_responsivo {
+        display: block;
+    }
+
+
+    .footer_title {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: fit-content;
+        
+    }
+
+    .listFooter {
+        display: none;
+    }
+
+    .listFooter.ativa {
+        display: block;
+    }
+
+    .censura {
+        display: none;
+    }
+
+    .footer_title img {
+        display: flex;
+        
+        
+    }
+    
+
+    .elementos_footer {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-left: 20px;
+        margin-right: 20px;
+        gap: 20px;
+    }
+
+    .footer {
+        margin: 0px;
+    }
+}

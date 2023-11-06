@@ -1,0 +1,115 @@
+
+
+.departamentos {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 80px;
+    margin-left: 140px;
+   
+}
+
+ .departamentos_slide {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+ .slide_dep {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    gap: 45px;
+     
+}
+
+.slide_dep li {
+    position: relative;
+}
+
+
+
+.slide_dep li p {
+    position: absolute; 
+    left: 1rem; 
+    bottom: .5rem;
+}
+
+
+
+.departamentos p {
+    font-weight: 700;
+    font-size: 32px;
+    text-transform: uppercase;
+    color: var(--text2);
+}
+
+
+
+.departamentos_pc {
+    background-color: var(--red);
+    width: 300px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    font-weight: 700;
+    color: var(--text2);
+    
+}
+
+
+
+.departamentos_gabinete {
+    background-color: var(--yellow);
+    width: 300px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    font-weight: 700;
+    color: var(--text2);
+    
+}
+
+.departamentos_mouse {
+    background-color: var(--green);
+    width: 300px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    font-weight: 700;
+    color: var(--text2);
+    
+}
+
+.departamentos_kit {
+    background-color: var(--blue);
+    width: 300px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    font-weight: 700;
+    color: var(--text2);
+    
+} 
+
+
+@media (max-width: 1050px) {
+    .departamentos {
+        margin-left: 10px;
+    }
+}
+
+

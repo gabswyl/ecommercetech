@@ -1,0 +1,176 @@
+.bar_card {
+    display: none;
+
+}
+
+.bar_card.ativo {
+    background-color: var(--nav);
+    display: block;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    width: 450px;
+    height: 100vh;
+    box-shadow: -10px 0px 10px rgba(31, 31, 31, 0.5);
+
+}
+
+.bar_title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0px;
+    width: 450px;
+    height: 100px;
+    padding: 10px;
+    background-color: var(--cardbg);
+    
+}
+
+.bar_product {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+
+.bar_title_text {
+    color: var(--text2);
+    font-size: 24px;
+}
+
+.bar_button {
+    border: none;
+    fill: var(--text);
+    background: none;
+    cursor: pointer;
+}
+
+.bar_vazio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.barcarrinho_text {
+    color: var(--red);
+}
+
+.barcarrinho_text2 {
+    color: var(--text2)
+}
+
+.bar_grid {
+    display: grid;
+    margin-top: 10px;
+    background-color: var(--bg);
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 10px;
+    width: 400px;
+    place-items: center;
+    border-radius: 15px;
+}
+
+.bar_price {
+    color: var(--preco);
+}
+
+.aumentarPreco {
+    background-color: var(--cardbg);
+    border: none;
+    text-align: center;
+    width: 50px;
+    height: 30px;
+}
+
+.bar_aumentar, .bar_diminuir {
+    background-color: var(--cardbg);
+    border: none;
+    margin-top: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+
+.barcep_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--bg);
+    margin-top: 20px;
+    padding: 25px;
+    width: 400px;
+    place-items: center;
+    border-radius: 15px;
+
+}
+
+.barcep_input {
+    background-color: #FDFDFD;
+    width: 200px;
+    padding: 10px;
+    border: 2px solid #FDFDFD;
+    color: var(--text);
+}
+
+.barcep_calcular {
+    background-color: var(--red);
+    border: 2px solid var(--red);
+    color: #fff;
+    padding: 10px;
+    align-items: center;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+
+.barsubtotal_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--bg);
+    margin-top: 20px;
+    padding: 25px;
+    width: 400px;
+    border-radius: 15px;
+}
+
+.bar_concluir {
+    display: grid;
+    grid-template-columns: 1fr;
+    position: absolute;
+    width: 100%;
+    top: 855px;
+}
+
+.bar_fechar {
+    background-color: var(--compra);
+    border: 2px solid var(--compra);
+    color: #fff;
+    padding: 10px;
+    align-items: center;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.bar_fechar:hover {
+    background-color: #009445;
+    border: 2px solid #009445;
+}
+
+.bar_continuar {
+    background-color: var(--cardbg);
+    border: 2px solid var(--cardbg);
+    color: var(--text2);
+    padding: 10px;
+    align-items: center;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.bar_continuar:hover {
+    background-color: var(--text);
+    border: 2px solid var(--text);
+
+}

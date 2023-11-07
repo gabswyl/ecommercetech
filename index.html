@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./css/global.css">
 </head>
 <body>
+
+
     <!-- nav css -->
     <nav class="nav">
         <div class="container_header">
@@ -70,12 +72,17 @@
                         <li class="nav_login"><a class="bold" href="">Meus pedidos</a></li>
                     </ul>
                 </nav>
-                <img class="barra_card" src="./assets/card.png" alt="">
+                <button class="listaCompras">
+                    <img class="barra_card" src="./assets/card.png" alt="">
+                </button>
             </div>
     
         </div>
     
+
+        
     </header>
+    
 
      <!-- navbar css -->
      <header class="navbar">
@@ -158,6 +165,62 @@
     <div class="backdrop"></div>
     
 
+    <!-- barshop css  é para lista de carrinho IMPORTANTE--> 
+    <div class="bar_card">
+    
+        <div class="bar_title">
+            <h1 class="bar_title_text">Carrinho de compras</h1>
+            <button class="bar_button">
+                <img src="./assets/close.svg" class="fechar">
+            </button>
+        </div>
+    
+        <!-- se o carrinho tiver com length 0, ele devera exibir essa mensagem que o carrinho ta vazio  -->
+        <!-- <div class="bar_vazio"> 
+                <p class="barcarrinho_text">Seu carrinho está vazio</p>
+                <p class="barcarrinho_text2">Não há produtos selecionado neste momento!</p>
+            </div> -->
+    
+        <div class="bar_product">
+            <div class="bar_grid">
+                <img src="assets/fone.png">
+                <p>Headset Gamer Redragon Zeus X, Chroma Mk.II, RGB, Surround 7.1, USB, Drivers 53MM, Preto/Vermelho -
+                    H510-RGB</p>
+    
+                <div>
+                    <button class="bar_aumentar"><img src="./assets/mais.svg"></button>
+                    <input type="number" class="aumentarPreco">
+                    <button class="bar_diminuir"><img src="./assets/menos.svg"></button>
+                </div>
+                <p class="bar_price">R$ 227,99</p>
+    
+            </div>
+    
+            <div class="barcep_grid">
+                <input class="barcep_input" type="text" placeholder="Qual CEP de entrega?">
+                <button class="barcep_calcular">Calcular</button>
+            </div>
+    
+            <div class="barsubtotal_grid">
+    
+                <p>Subtotal:</p>
+                <p>R$ 227,99</p>
+    
+                <div>
+                    <p>12x de R$ 18,92 sem juros</p>
+                </div>
+            </div>
+
+           
+        </div>
+
+        <div class="bar_concluir">
+            <button class="bar_fechar">Fechar pedido</button>
+            <button class="bar_continuar">Continuar comprando</button>
+
+        </div>
+    
+    </div>
     <!-- slide css -->
 
     <main class="swiper fadeInDown" data-anime="300">

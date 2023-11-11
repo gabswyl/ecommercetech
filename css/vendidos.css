@@ -108,6 +108,11 @@
     align-items: center;
     margin-top: 22px;
     border-radius: 0 0 15px 15px;
+    cursor: pointer;
+}
+
+.comprar_card:hover {
+   background-color: #00833d;
 }
 
 .comprar_card span {

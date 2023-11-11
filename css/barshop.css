@@ -13,6 +13,8 @@
     width: 450px;
     height: 100vh;
     box-shadow: -10px 0px 10px rgba(31, 31, 31, 0.5);
+    transition: 0.10s;
+    translate: (-30px, 0, 0, 0);
 
 }
 
@@ -92,6 +94,7 @@
     margin-top: 5px;
     width: 30px;
     height: 30px;
+    cursor: pointer;
 }
 
 
@@ -123,6 +126,11 @@
     align-items: center;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+.barcep_calcular:hover {
+    border: rgb(148, 0, 0);
+    background-color: rgb(148, 0, 0);
 }
 
 
@@ -173,4 +181,20 @@
     background-color: var(--text);
     border: 2px solid var(--text);
 
+}
+
+.removerProduto {
+    background-color: var(--red);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    text-transform: uppercase;
+    width: 100%; 
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+.removerProduto:hover {
+    background-color: rgb(148, 0, 0);
 }

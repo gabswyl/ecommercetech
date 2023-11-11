@@ -230,9 +230,9 @@ function produtosDinamicos() {
                     <img src="../assets/star.png" alt="estrela">
                     <span class="review_card">4.8 (112 reviews)</span>
                 </div>
-                <span class="preco1_card">DE: R$${item.precoAntigo.toFixed()} por:</span><br>
-                <span class="preco2_card">R$ ${item.precoAtual.toFixed()} à vista:</span><br>
-                <span class="preco3_card">${item.parcelas}x de R$${item.parcelamento.toFixed()} sem juros </span>
+                <span class="preco1_card">DE: R$${item.precoAntigo} por:</span><br>
+                <span class="preco2_card">R$ ${item.precoAtual} à vista:</span><br>
+                <span class="preco3_card">${item.parcelas}x de R$${item.parcelamento} sem juros </span>
             </div>
             <div class="comprar_card">
                 <img src="../assets/shop.svg" alt="compra">
@@ -249,3 +249,88 @@ function produtosDinamicos() {
 }
 
 produtosDinamicos();
+
+// carrinho de compras dinamico 
+function removerProduto() {
+    const removerProdutos = document.querySelectorAll('.removerProduto');
+
+    removerProdutos.forEach(botao => {
+        botao.addEventListener('click', () => {
+            const containerProduto = botao.closest('.bar_grid');
+            containerProduto.remove();
+        });
+    });
+}
+
+removerProduto();
+
+
+function attPrice() {
+    const produtos = document.querySelectorAll('.bar_grid');
+    let total = 0;
+
+    for (let i = 0; i < produtos.length; i++) {
+        const precoProduto = produtos[i].querySelector('.bar_price');
+        const strPreco = precoProduto.innerText.replace("R$", "").replace(",", ".");
+
+        const qntdProdutos = produtos[i].querySelector('.aumentarPreco');
+        const valueQntdProduto = qntdProdutos.value;
+
+        total += parseFloat(strPreco) * parseInt(valueQntdProduto);
+    }
+
+    const precoSub = document.querySelector(".priceSubtotal");
+    precoSub.innerText = "R$" + total.toFixed();
+}
+
+const aumentarPrecoInput = document.querySelectorAll('.aumentarPreco');
+const buttonsAumentar = document.querySelectorAll('.bar_aumentar');
+const buttonsDiminuir = document.querySelectorAll('.bar_diminuir');
+
+aumentarPrecoInput.forEach(function (input) {
+    input.addEventListener('input', attPrice);
+});
+
+buttonsAumentar.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        aumentarPrecoInput[index].value = parseInt(aumentarPrecoInput[index].value) + 1;
+        attPrice();
+    });
+});
+
+buttonsDiminuir.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        const inputValor = parseInt(aumentarPrecoInput[index].value);
+
+        if (inputValor > 0) {
+            aumentarPrecoInput[index].value = inputValor - 1;
+        }
+
+        attPrice();
+    });
+});
+
+
+
+
+// scroll animacao 
+
+
+function scrollAnimacao() {
+    const animar = document.querySelectorAll('.animar');
+    const scrollResponsivo = window.innerHeight * 0.6
+
+    function scrollAnimar() {
+        animar.forEach((item) => {
+            const animacao = item.getBoundingClientRect().top - scrollResponsivo;
+
+            if (animacao < 0) {
+                item.classList.add('ativo')
+            }
+        })
+    }
+
+    window.addEventListener("scroll", scrollAnimar)
+}
+
+scrollAnimacao();

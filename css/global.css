@@ -38,3 +38,13 @@ body {
     --compra: #01BE5A;
     --cardbg: #D9D9D9;
 }
+
+
+.animar {
+    opacity: 0;
+}
+
+.animar.ativo {
+    transition: 0.5s;
+    opacity: 1;
+}

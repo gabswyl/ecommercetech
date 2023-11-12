@@ -109,6 +109,7 @@
     margin-top: 22px;
     border-radius: 0 0 15px 15px;
     cursor: pointer;
+    border: none;
 }
 
 .comprar_card:hover {

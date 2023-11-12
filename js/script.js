@@ -223,7 +223,7 @@ function produtosDinamicos() {
         <li class="list_card">
          <div class="cards">
                 <div class="fone_card">
-                    <img src="${item.img}" alt="${item.nome}">
+                    <img class="img_card" src="${item.img}" alt="${item.nome}">
                 </div>
                 <p class="title_card">${item.nome}</p>
                 <div class="reviews_card">
@@ -234,10 +234,10 @@ function produtosDinamicos() {
                 <span class="preco2_card">R$ ${item.precoAtual} à vista:</span><br>
                 <span class="preco3_card">${item.parcelas}x de R$${item.parcelamento} sem juros </span>
             </div>
-            <div class="comprar_card">
+            <button class="comprar_card">
                 <img src="../assets/shop.svg" alt="compra">
                 <span>COMPRAR</span>
-            </div>
+            </button>
         </li>
         
         `;
@@ -251,69 +251,143 @@ function produtosDinamicos() {
 produtosDinamicos();
 
 // carrinho de compras dinamico 
-function removerProduto() {
-    const removerProdutos = document.querySelectorAll('.removerProduto');
-
-    removerProdutos.forEach(botao => {
-        botao.addEventListener('click', () => {
-            const containerProduto = botao.closest('.bar_grid');
-            containerProduto.remove();
-        });
-    });
-}
-
-removerProduto();
 
 
-function attPrice() {
-    const produtos = document.querySelectorAll('.bar_grid');
-    let total = 0;
+function adicionandoProdutos() {
+    const botaoCompra = document.querySelectorAll('.comprar_card')
+    
+    
+    botaoCompra.forEach(function (item, index, array) {
+        item.addEventListener('click', (event) => {
+            const selecionar = event.target.closest('.comprar_card')
+            const info = selecionar.parentElement;
+            const imagemProduto = info.querySelector('.fone_card img')
+            const srcImg = imagemProduto.src
+            const nomeProduto = info.querySelector('.title_card')
+            
+            // precos 
+            const precoProduto = info.querySelector('.preco2_card')
+            const precoTexto = precoProduto.textContent;
+            const precoNumerico = precoTexto.match(/\d+/); // para localizar numero 
+            
+            const compraBar = document.querySelector('.bar_product')
+            const produtoVazio = document.querySelector('.bar_vazio')
+            produtoVazio.innerText = " "
+            
+            compraBar.innerHTML += `
+            <div class="bar_grid">
+            <img src="${srcImg}">
+            <p>${nomeProduto.innerText}</p>
+            <div>
+            <button class="bar_aumentar"><img src="./assets/mais.svg"></button>
+            <input type="number" value="1" class="aumentarPreco">
+            <button class="bar_diminuir"><img src="./assets/menos.svg"></button>
+            </div>
+                <p class="bar_price">Preço: R$${precoNumerico[0]}</p>
 
-    for (let i = 0; i < produtos.length; i++) {
-        const precoProduto = produtos[i].querySelector('.bar_price');
-        const strPreco = precoProduto.innerText.replace("R$", "").replace(",", ".");
+                <button class="removerProduto">Remover</button>
+                </div>
+                `
+                
+                // ativar classe 
+                
+                // ativar classe 
+                const cepCarrinho = document.querySelectorAll(".barcep_grid");
+                const subTotalCarrinho = document.querySelectorAll(".barsubtotal_grid");
+                
+                cepCarrinho.forEach(function (element) {
+                    element.classList.add('ativo');
+                });
+                
+                subTotalCarrinho.forEach(function (element) {
+                    element.classList.add('ativo');
+                });
 
-        const qntdProdutos = produtos[i].querySelector('.aumentarPreco');
-        const valueQntdProduto = qntdProdutos.value;
-
-        total += parseFloat(strPreco) * parseInt(valueQntdProduto);
+                
+                
+            removerProduto();
+            alteracaoInput();
+            attPrice();
+                
+            })
+            
+        })
     }
+    
+    
+    adicionandoProdutos(); 
+    
+    
+    
+    
+    function removerProduto() {
+        const removerProdutos = document.querySelectorAll('.removerProduto');
+    
+        removerProdutos.forEach(botao => {
+            botao.addEventListener('click', () => {
+                const containerProduto = botao.closest('.bar_grid');
+                containerProduto.remove();
+            });
+        });
+    }
+    
+    removerProduto();
+    
+    // function alteracaoInput() {
+    //     const aumentarPrecoInput = document.querySelectorAll('.aumentarPreco');
+    //     const buttonsAumentar = document.querySelectorAll('.bar_aumentar');
+    //     const buttonsDiminuir = document.querySelectorAll('.bar_diminuir');
+        
+    //     aumentarPrecoInput.forEach(function (input) { // atualizar o preco mudando o valor atraves do input
+    //         input.addEventListener('input', attPrice);
+    //     });
+        
+    //     buttonsAumentar.forEach((button, index) => { // atualizar o preco mudando o valor atraves do botao aumentar pra aumentar o valor do input
+    //         button.addEventListener('click', () => {
+    //             aumentarPrecoInput[index].value = parseInt(aumentarPrecoInput[index].value) + 1;
+    //             attPrice();
+    //         });
+    //     });
+        
+    //     buttonsDiminuir.forEach((button, index) => { // atualizar o preco mudando o valor atraves do botao aumentar pra diminuir o valor do input
+    //         button.addEventListener('click', () => {
+    //             const inputValor = parseInt(aumentarPrecoInput[index].value);
+                
+    //             if (inputValor > 0) {
+    //                 aumentarPrecoInput[index].value = inputValor - 1;
+    //             }
+                
+    //             attPrice();
+    //         });
+    //     });
+    // }
+    
+    // alteracaoInput();
+    
 
-    const precoSub = document.querySelector(".priceSubtotal");
-    precoSub.innerText = "R$" + total.toFixed();
-}
+    // function attPrice() { // atualizar o preco
+    //     const produtos = document.querySelectorAll('.bar_grid');
+    //     console.log(produtos);
+    //     let total = 0;
+        
+    //     for (let i = 0; i < produtos.length; i++) {
+    //         const precoProduto = produtos[i].querySelector('.bar_price');
+    //         const strPreco = precoProduto.innerText.replace("R$", "").replace(",", ".");
+            
+    //         const qntdProdutos = produtos[i].querySelector('.aumentarPreco');
+    //         const valueQntdProduto = qntdProdutos.value;
+            
+    //         total += parseFloat(strPreco) * parseInt(valueQntdProduto);
+    //     }
+        
+    //     const precoSub = document.querySelector(".priceSubtotal");
+    //     precoSub.innerText = "R$" + total.toFixed();
+    // }
 
-const aumentarPrecoInput = document.querySelectorAll('.aumentarPreco');
-const buttonsAumentar = document.querySelectorAll('.bar_aumentar');
-const buttonsDiminuir = document.querySelectorAll('.bar_diminuir');
-
-aumentarPrecoInput.forEach(function (input) {
-    input.addEventListener('input', attPrice);
-});
-
-buttonsAumentar.forEach((button, index) => {
-    button.addEventListener('click', () => {
-        aumentarPrecoInput[index].value = parseInt(aumentarPrecoInput[index].value) + 1;
-        attPrice();
-    });
-});
-
-buttonsDiminuir.forEach((button, index) => {
-    button.addEventListener('click', () => {
-        const inputValor = parseInt(aumentarPrecoInput[index].value);
-
-        if (inputValor > 0) {
-            aumentarPrecoInput[index].value = inputValor - 1;
-        }
-
-        attPrice();
-    });
-});
-
-
-
-
-// scroll animacao 
+    // attPrice(); 
+    
+    
+    // scroll animacao 
 
 
 function scrollAnimacao() {

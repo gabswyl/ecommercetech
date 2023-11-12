@@ -107,6 +107,16 @@
 } 
 
 
+.departamentos_pc:hover,
+.departamentos_gabinete:hover,
+.departamentos_mouse:hover,
+.departamentos_kit:hover {
+    transform: scale3d(1.1, 1.1, 1);
+}
+
+
+
+
 @media (max-width: 1050px) {
     .departamentos {
         margin-left: 10px;

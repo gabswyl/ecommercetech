@@ -226,3 +226,11 @@
 .removerProduto:hover {
     background-color: rgb(148, 0, 0);
 }
+
+/* .bar_vazio {
+    display: none;
+} */
+
+.bar_vazio.ativo {
+    display: block;
+}

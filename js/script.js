@@ -255,8 +255,8 @@ produtosDinamicos();
 
 function adicionandoProdutos() {
     const botaoCompra = document.querySelectorAll('.comprar_card')
-    
-    
+
+
     botaoCompra.forEach(function (item, index, array) {
         item.addEventListener('click', (event) => {
             const selecionar = event.target.closest('.comprar_card')
@@ -264,16 +264,16 @@ function adicionandoProdutos() {
             const imagemProduto = info.querySelector('.fone_card img')
             const srcImg = imagemProduto.src
             const nomeProduto = info.querySelector('.title_card')
-            
+
             // precos 
             const precoProduto = info.querySelector('.preco2_card')
             const precoTexto = precoProduto.textContent;
             const precoNumerico = precoTexto.match(/\d+/); // para localizar numero 
-            
+
             const compraBar = document.querySelector('.bar_product')
             const produtoVazio = document.querySelector('.bar_vazio')
             produtoVazio.innerText = " "
-            
+
             compraBar.innerHTML += `
             <div class="bar_grid">
             <img src="${srcImg}">
@@ -288,106 +288,111 @@ function adicionandoProdutos() {
                 <button class="removerProduto">Remover</button>
                 </div>
                 `
-                
-                // ativar classe 
-                
-                // ativar classe 
-                const cepCarrinho = document.querySelectorAll(".barcep_grid");
-                const subTotalCarrinho = document.querySelectorAll(".barsubtotal_grid");
-                
-                cepCarrinho.forEach(function (element) {
-                    element.classList.add('ativo');
-                });
-                
-                subTotalCarrinho.forEach(function (element) {
-                    element.classList.add('ativo');
-                });
 
-                
-                
-            removerProduto();
-            alteracaoInput();
-            attPrice();
-                
-            })
-            
-        })
-    }
-    
-    
-    adicionandoProdutos(); 
-    
-    
-    
-    
-    function removerProduto() {
-        const removerProdutos = document.querySelectorAll('.removerProduto');
-    
-        removerProdutos.forEach(botao => {
-            botao.addEventListener('click', () => {
-                const containerProduto = botao.closest('.bar_grid');
-                containerProduto.remove();
+            // ativar classe 
+            const cepCarrinho = document.querySelectorAll(".barcep_grid");
+            const subTotalCarrinho = document.querySelectorAll(".barsubtotal_grid");
+
+            cepCarrinho.forEach(function (element) {
+                element.classList.add('ativo');
             });
+
+            subTotalCarrinho.forEach(function (element) {
+                element.classList.add('ativo');
+            });
+
+            // atualizar preco 
+
+
+            function atualizandoPreço() {
+                const carrinhoProdutos = document.querySelectorAll(".bar_price");
+
+                let totalzin = 0
+                carrinhoProdutos.forEach((item) => {
+                    const strPrice = item.textContent
+                    const removendoCaracter = strPrice.replace("Preço: R$", "")
+
+                    const qntdProduto = document.querySelector(".aumentarPreco")
+                    const qntdProdutoValor = qntdProduto.value
+
+
+                    totalzin += parseInt(removendoCaracter) * parseInt(qntdProdutoValor)
+                })
+
+                const subTotalProdutos = document.querySelector(".priceSubtotal")
+                subTotalProdutos.innerText = "R$" + totalzin.toFixed();
+
+            }
+
+            atualizandoPreço();
+
+            // alterar o input clicando + e - 
+
+            function alterarInput() {
+                const buttonsAumentar = document.querySelectorAll('.bar_aumentar');
+                const buttonsDiminuir = document.querySelectorAll('.bar_diminuir');
+                const aumentarPrecoInput = document.querySelectorAll('.aumentarPreco');
+                
+                aumentarPrecoInput.forEach((input) => {
+                    input.addEventListener("input", atualizandoPreço)
+                })
+
+                buttonsAumentar.forEach((button, index) => {
+                    button.addEventListener('click', () => {
+                        aumentarPrecoInput[index].value = parseInt(aumentarPrecoInput[index].value) + 1;
+                        atualizandoPreço(); 
+                    })
+                })
+
+                buttonsDiminuir.forEach((button, index) => {
+                    button.addEventListener('click', () => {
+                        const inputValor = parseInt(aumentarPrecoInput[index].value);
+
+                        if (inputValor > 1) {
+                            aumentarPrecoInput[index].value = inputValor - 1;
+                        }
+
+                        atualizandoPreço();
+
+                    })
+                })
+
+                atualizandoPreço();
+
+
+            }
+
+            alterarInput();
+
+            removerProduto();
+
+        })
+
+    })
+}
+
+
+adicionandoProdutos();
+
+
+function removerProduto() {
+    const removerProdutos = document.querySelectorAll('.removerProduto');
+
+    removerProdutos.forEach(botao => {
+        botao.addEventListener('click', () => {
+            const containerProduto = botao.closest('.bar_grid');
+            containerProduto.remove();
         });
-    }
-    
-    removerProduto();
-    
-    // function alteracaoInput() {
-    //     const aumentarPrecoInput = document.querySelectorAll('.aumentarPreco');
-    //     const buttonsAumentar = document.querySelectorAll('.bar_aumentar');
-    //     const buttonsDiminuir = document.querySelectorAll('.bar_diminuir');
-        
-    //     aumentarPrecoInput.forEach(function (input) { // atualizar o preco mudando o valor atraves do input
-    //         input.addEventListener('input', attPrice);
-    //     });
-        
-    //     buttonsAumentar.forEach((button, index) => { // atualizar o preco mudando o valor atraves do botao aumentar pra aumentar o valor do input
-    //         button.addEventListener('click', () => {
-    //             aumentarPrecoInput[index].value = parseInt(aumentarPrecoInput[index].value) + 1;
-    //             attPrice();
-    //         });
-    //     });
-        
-    //     buttonsDiminuir.forEach((button, index) => { // atualizar o preco mudando o valor atraves do botao aumentar pra diminuir o valor do input
-    //         button.addEventListener('click', () => {
-    //             const inputValor = parseInt(aumentarPrecoInput[index].value);
-                
-    //             if (inputValor > 0) {
-    //                 aumentarPrecoInput[index].value = inputValor - 1;
-    //             }
-                
-    //             attPrice();
-    //         });
-    //     });
-    // }
-    
-    // alteracaoInput();
-    
+    });
+}
 
-    // function attPrice() { // atualizar o preco
-    //     const produtos = document.querySelectorAll('.bar_grid');
-    //     console.log(produtos);
-    //     let total = 0;
-        
-    //     for (let i = 0; i < produtos.length; i++) {
-    //         const precoProduto = produtos[i].querySelector('.bar_price');
-    //         const strPreco = precoProduto.innerText.replace("R$", "").replace(",", ".");
-            
-    //         const qntdProdutos = produtos[i].querySelector('.aumentarPreco');
-    //         const valueQntdProduto = qntdProdutos.value;
-            
-    //         total += parseFloat(strPreco) * parseInt(valueQntdProduto);
-    //     }
-        
-    //     const precoSub = document.querySelector(".priceSubtotal");
-    //     precoSub.innerText = "R$" + total.toFixed();
-    // }
+removerProduto();
 
-    // attPrice(); 
-    
-    
-    // scroll animacao 
+
+
+
+
+// scroll animacao 
 
 
 function scrollAnimacao() {

@@ -51,6 +51,14 @@ footer p {
     margin-top: 5px;
 }
 
+.creditos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    color: var(--text);
+}
+
 @media (min-width: 1250px) { 
     .footer_responsivo {
         display: none;

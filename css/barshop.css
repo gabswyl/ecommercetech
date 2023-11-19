@@ -7,15 +7,25 @@
     background-color: var(--nav);
     display: block;
     position: fixed;
-    z-index: 2;
+    z-index: 300;
     top: 0;
     right: 0;
-    width: 450px;
-    height: 100vh;
+    width: 470px;
+    height: 100%;
     box-shadow: -10px 0px 10px rgba(31, 31, 31, 0.5);
-    transition: 0.10s;
-    translate: (-30px, 0, 0, 0);
+    transition-duration: 500ms;
+    overflow: auto;
+    
 
+}
+
+.bar_card.ativo::-webkit-scrollbar {
+    width: 12px;
+}
+
+
+.bar_card.ativo::-webkit-scrollbar-thumb {
+    background-color: #616161; 
 }
 
 .bar_title {
@@ -24,12 +34,17 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 0px;
-    width: 450px;
+    width: 100%;
     height: 100px;
     padding: 10px;
     background-color: var(--cardbg);
     
 }
+
+.desativar {
+    display: none;
+}
+
 
 .bar_product {
     margin-left: 25px;
@@ -69,6 +84,7 @@
     margin-top: 10px;
     background-color: var(--bg);
     grid-template-columns: 1fr 1fr;
+    margin-left: 15px;
     align-items: center;
     padding: 10px;
     width: 400px;
@@ -99,6 +115,11 @@
 
 
 .barcep_grid {
+    display: none;
+}
+
+
+.barcep_grid.ativo {
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: var(--bg);
@@ -106,6 +127,7 @@
     padding: 25px;
     width: 400px;
     place-items: center;
+    margin-left: 40px;
     border-radius: 15px;
 
 }
@@ -135,21 +157,27 @@
 
 
 .barsubtotal_grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: none;
+}
+
+.barsubtotal_grid.ativo {
+    display: flex;
+    justify-content: space-between;
     background-color: var(--bg);
     margin-top: 20px;
     padding: 25px;
     width: 400px;
     border-radius: 15px;
+    margin-left: 40px;
 }
 
 .bar_concluir {
     display: grid;
     grid-template-columns: 1fr;
-    position: absolute;
+    position: sticky;
     width: 100%;
     top: 845px;
+    margin-top: 20px;
 }
 
 .bar_fechar {
@@ -197,4 +225,12 @@
 
 .removerProduto:hover {
     background-color: rgb(148, 0, 0);
+}
+
+/* .bar_vazio {
+    display: none;
+} */
+
+.bar_vazio.ativo {
+    display: block;
 }

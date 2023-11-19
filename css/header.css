@@ -1,6 +1,12 @@
-/* .headerdois {
-    background-color: red;
-} */
+.headerdois {
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    z-index: 298;
+    background-color: var(--bg);
+    margin-top: 0px;
+    
+}
 
 .container_search {
     display: flex;

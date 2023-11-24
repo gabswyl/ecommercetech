@@ -85,7 +85,7 @@
     display: block;
     position: absolute;
     width: 100%;
-    top: 165px;
+    top: 120px;
     right: 0px;
     background-color: var(--nav);
     transition: .6s;
@@ -117,8 +117,14 @@
 }
 
 .nav_listjs a {
+    font-size: 1.25rem;
     text-decoration: none;
     color: var(--text2);
+}
+
+.nav_dep {
+    display: flex;
+   align-items: center;
 }
 
 .nav_listjs li:hover {
@@ -132,6 +138,21 @@
     cursor: pointer;
 }
 
+
+.contagemProdutos {
+    margin-left: 5px;
+    position: absolute;
+    top: 35px;
+    border-radius: 50px;
+    background-color: var(--red);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color: var(--bg)
+}
  
 @media (max-width: 1400px) {
     .pesquisa {
@@ -159,7 +180,7 @@
         width: 220px;
     }
 
-    .botao_login, .barra_card {
+    .botao_login, .barra_card, .contagemProdutos {
         display: none;
     }
 
@@ -167,9 +188,10 @@
     .navjs.active .nav_listjs {
         display: flex;
         flex-direction: column;
-        height: calc(100vh - 165px);
+        height: 100vh;
         visibility: visible;
         overflow-y: auto;
+        top: 120px;
         
     }
     .menu_header {

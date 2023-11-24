@@ -10,6 +10,7 @@
 <body>
 
 
+    
     <!-- nav css -->
     <nav class="nav">
         <div class="container_header">
@@ -60,19 +61,20 @@
                         <img class="close" src="./assets/close.svg" alt="icon">
                     </button>
                     <ul class="nav_listjs">
-                        <li class="nav_j">
+                        <li class="nav_j nav_dep">
                             <a href="">Departamentos</a>
-                            <img src="..//assets/arrow.png" alt="arrow">
+                            <img src="./assets/arrow-right.svg" alt="arrow">
                         </li>
                         <li class="nav_j"><a href="">Monte seu PC</a></li>
                         <li class="nav_j"><a href="">Ofertas do dia</a></li>
                         <li class="nav_j"><a href="">Lançamentos</a></li>
                         <li class="nav_x"><a href="">PC Gamer</a></li>
                         <li class="nav_login"><a href="">Entrar / Cadastrar</a></li>
-                        <li class="nav_login"><a class="bold" href="">Meus pedidos</a></li>
+                        <li class="nav_login"><a class="bold" href="carrinho.html">Meus pedidos</a></li>
                     </ul>
                 </nav>
                 <button class="listaCompras">
+                    <div class="contagemProdutos">0</div>
                     <img class="barra_card" src="./assets/card.png" alt="">
                 </button>
             </div>
@@ -82,7 +84,6 @@
 
         
     </header>
-    
 
      <!-- navbar css -->
      <header class="navbar">
@@ -202,8 +203,10 @@
             <button class="bar_continuar">Continuar comprando</button>
 
         </div>
-    
+
+        
     </div>
+    <div class="overlay"></div>
     <!-- slide css -->
 
     <main class="swiper fadeInDown" data-anime="300">

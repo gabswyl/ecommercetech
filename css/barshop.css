@@ -1,5 +1,7 @@
 .bar_card {
     display: none;
+     transform: translate3d(20px, 0, 0);
+    transition: transform 0.3s ease-in-out, display 0.3s;
 
 }
 
@@ -12,11 +14,35 @@
     right: 0;
     width: 470px;
     height: 100%;
-    box-shadow: -10px 0px 10px rgba(31, 31, 31, 0.5);
-    transition-duration: 500ms;
+    transform: translateX(0);
     overflow: auto;
+    animation: slideFromRight 0.3s ease-in-out;
     
+}
 
+
+@keyframes slideFromRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.overlay {
+    display: none;
+}
+
+.overlay.ativo {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 299; 
 }
 
 .bar_card.ativo::-webkit-scrollbar {
